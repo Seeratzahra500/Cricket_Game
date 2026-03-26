@@ -1,0 +1,117 @@
+/* ============================================================
+   APP STYLES
+   Main layout for the cricket game
+   ============================================================ */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at top, #0d2137 0%, #0a1628 70%);
+  padding: 20px;
+}
+
+/* Main game container - holds everything */
+.game-container {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Top row: scoreboard + result badge side by side */
+.top-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---- RESULT BADGE ---- */
+/* Flashes after each shot to show what happened */
+.result-badge {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  padding: 16px 24px;
+  border-radius: 12px;
+  color: white;
+  letter-spacing: 2px;
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-align: center;
+  min-width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+.result-wicket { background: linear-gradient(135deg, #c0392b, #e74c3c); box-shadow: 0 0 20px rgba(231, 76, 60, 0.5); }
+.result-six    { background: linear-gradient(135deg, #8e44ad, #9b59b6); box-shadow: 0 0 20px rgba(155, 89, 182, 0.5); }
+.result-four   { background: linear-gradient(135deg, #d35400, #f39c12); box-shadow: 0 0 20px rgba(243, 156, 18, 0.5); }
+.result-runs   { background: linear-gradient(135deg, #1e8449, #27ae60); box-shadow: 0 0 20px rgba(39, 174, 96, 0.4); }
+
+/* ---- COMMENTARY BOX ---- */
+.commentary-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(243, 156, 18, 0.2);
+  border-left: 4px solid #f39c12;
+  border-radius: 8px;
+  padding: 12px 16px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.commentary-text {
+  color: #ecf0f1;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* ---- RESTART BUTTON (small, always visible) ---- */
+.restart-small-btn {
+  background: transparent;
+  border: 1px solid #555;
+  border-radius: 8px;
+  color: #888;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+  align-self: center;
+}
+
+.restart-small-btn:hover {
+  border-color: #f39c12;
+  color: #f39c12;
+  background: rgba(243, 156, 18, 0.1);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 500px) {
+  .app {
+    padding: 10px;
+  }
+
+  .top-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .result-badge {
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+}

@@ -1,0 +1,89 @@
+.scoreboard {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border: 2px solid #f39c12;
+  border-radius: 12px;
+  padding: 16px 24px;
+  text-align: center;
+  color: white;
+  min-width: 240px;
+  box-shadow: 0 0 20px rgba(243, 156, 18, 0.3);
+}
+
+.scoreboard-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  color: #f39c12;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.scoreboard-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1;
+  color: #fff;
+}
+
+.wicket-color {
+  color: #e74c3c;
+}
+
+.stat-divider {
+  font-size: 36px;
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #aaa;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+.scoreboard-overs {
+  font-size: 14px;
+  color: #bdc3c7;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.balls-left {
+  color: #f39c12;
+  font-weight: 600;
+}
+
+.wickets-remaining {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.wicket-dot {
+  font-size: 18px;
+  transition: opacity 0.3s;
+}
+
+.wicket-alive {
+  opacity: 1;
+}
+
+.wicket-lost {
+  opacity: 0.2;
+  filter: grayscale(1);
+}

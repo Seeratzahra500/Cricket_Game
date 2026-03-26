@@ -1,0 +1,102 @@
+.style-selector {
+  width: 100%;
+}
+
+.style-label {
+  text-align: center;
+  color: #aaa;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.style-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.style-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  max-width: 220px;
+  background: #1a1a2e;
+  color: white;
+  text-align: left;
+}
+
+.style-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.style-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Aggressive button theme: red/orange */
+.aggressive-btn {
+  border-color: #e74c3c;
+}
+
+.aggressive-btn.active {
+  background: linear-gradient(135deg, #c0392b, #e74c3c);
+  box-shadow: 0 0 20px rgba(231, 76, 60, 0.4);
+}
+
+.aggressive-btn:hover:not(:disabled):not(.active) {
+  border-color: #ff6b6b;
+  background: rgba(231, 76, 60, 0.1);
+}
+
+/* Defensive button theme: blue/green */
+.defensive-btn {
+  border-color: #27ae60;
+}
+
+.defensive-btn.active {
+  background: linear-gradient(135deg, #1e8449, #27ae60);
+  box-shadow: 0 0 20px rgba(39, 174, 96, 0.4);
+}
+
+.defensive-btn:hover:not(:disabled):not(.active) {
+  border-color: #2ecc71;
+  background: rgba(39, 174, 96, 0.1);
+}
+
+.btn-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.btn-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.btn-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.btn-desc {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.btn-stats {
+  font-size: 10px;
+  opacity: 0.6;
+  font-style: italic;
+}

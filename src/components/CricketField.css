@@ -1,0 +1,143 @@
+/* ============================================================
+   CRICKET FIELD STYLES + ANIMATIONS
+   ============================================================ */
+
+.field-wrapper {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid #2ecc71;
+  box-shadow: 0 0 30px rgba(46, 204, 113, 0.2);
+}
+
+/* Sky with crowd */
+.sky {
+  background: linear-gradient(to bottom, #87CEEB, #b0e0e6);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.crowd {
+  font-size: 18px;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+/* Green outfield */
+.outfield {
+  background: linear-gradient(to bottom, #2d8a4e, #27ae60);
+  padding: 20px 10px;
+  position: relative;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Brown cricket pitch strip */
+.pitch {
+  background: linear-gradient(to bottom, #c8a26b, #b8934a);
+  width: 85%;
+  height: 80px;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* ---- STUMPS ---- */
+.stumps {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  bottom: 0;
+  height: 70%;
+  align-items: flex-end;
+}
+
+.left-stumps  { left: 15px; }
+.right-stumps { right: 15px; }
+
+.stump {
+  width: 5px;
+  height: 50px;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 0 4px rgba(255,255,255,0.5);
+}
+
+/* ---- BALL ---- */
+.ball {
+  position: absolute;
+  font-size: 22px;
+  /* Start position: near the right stumps (bowler side) */
+  right: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: none;
+  z-index: 5;
+}
+
+/* 
+  BOWLING ANIMATION
+  Ball travels from right (bowler end) to left (batsman end)
+  Duration: 0.6 seconds
+*/
+@keyframes bowlingAnim {
+  0%   { right: 80px; opacity: 1; }
+  100% { right: calc(100% - 100px); opacity: 1; }
+}
+
+.ball.bowling {
+  animation: bowlingAnim 0.6s ease-in forwards;
+}
+
+/* ---- BATSMAN ---- */
+.batsman {
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  z-index: 6;
+  transition: transform 0.1s;
+}
+
+/*
+  BATTING ANIMATION
+  Batsman swings when the player plays a shot
+*/
+@keyframes swingAnim {
+  0%   { transform: translateY(-50%) rotate(0deg); }
+  25%  { transform: translateY(-50%) rotate(-30deg); }
+  50%  { transform: translateY(-50%) rotate(20deg); }
+  100% { transform: translateY(-50%) rotate(0deg); }
+}
+
+.batsman.batting {
+  animation: swingAnim 0.5s ease-in-out;
+}
+
+/*
+  OUT ANIMATION
+  Batsman "falls" when a wicket is lost
+*/
+@keyframes outAnim {
+  0%   { transform: translateY(-50%) rotate(0deg); opacity: 1; }
+  50%  { transform: translateY(-50%) rotate(90deg); opacity: 0.6; }
+  100% { transform: translateY(10px) rotate(90deg); opacity: 0; }
+}
+
+.batsman.out-animation {
+  animation: outAnim 0.8s ease-in forwards;
+}
+
+/* Bottom grass strip */
+.ground-bottom {
+  background: #1e8449;
+  height: 20px;
+}
